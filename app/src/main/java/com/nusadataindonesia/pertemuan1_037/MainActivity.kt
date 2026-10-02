@@ -1,5 +1,6 @@
 package com.nusadataindonesia.pertemuan1_037
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,11 +15,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.nusadataindonesia.pertemuan1_037.ui.theme.Pertemuan1_037Theme
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            loginPage(modifier = Modifier)
+            Pertemuan1_037Theme{
+                Scaffold() {
+                    loginPage(modifier = Modifier)
+                }
+            }
         }
     }
 }
