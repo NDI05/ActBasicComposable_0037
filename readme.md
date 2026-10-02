@@ -1,0 +1,1 @@
+![hasil](/Users/user/Documents/Gabut-Code/pertemuan1_037/app/src/main/res/drawable/hasil.png)
