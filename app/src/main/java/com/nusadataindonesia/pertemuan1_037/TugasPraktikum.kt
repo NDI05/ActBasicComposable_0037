@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,37 +28,48 @@ fun loginPage(modifier: Modifier){
             contentScale = ContentScale.FillBounds,
             modifier = Modifier.matchParentSize()
         )
-        Column(modifier = modifier.fillMaxSize().padding(top = 20.dp, bottom = 20.dp),
-            verticalArrangement = Arrangement.SpaceEvenly) {
-            Column() {
+        Column(modifier = modifier
+            .fillMaxSize()
+            .padding(vertical = 20.dp, horizontal = 10.dp),
+            verticalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Column(modifier = modifier
+                .fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Text(text = "LOGIN",
                     fontSize = 60.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.Blue
                 )
-                Text(text = "Ini Adalah Halaman Login",
-                    fontSize = 60.sp)
+                Text(text = "Silahkan Login Terlebih dahulu",
+                    fontSize = 25.sp,
+                    color = Color.White)
+                Image(painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                    contentDescription = null,
+                    contentScale = ContentScale.FillBounds)
             }
-            Column() {
-                Text(text = "LOGIN",
-                    fontSize = 60.sp,
+            Column(modifier = modifier
+                .fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(text = "nama",
+                    fontSize = 40.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.Blue
                 )
-                Text(text = "Ini Adalah Halaman Login",
-                    fontSize = 60.sp)
-            }
-            Column() {
-                Text(
-                    text = "LOGIN",
-                    fontSize = 60.sp,
+                Text(text = "Andhika Pratama",
+                    fontSize = 25.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Blue
-                )
-                Text(
-                    text = "Ini Adalah Halaman Login",
-                    fontSize = 60.sp
-                )
+                    color = Color.White)
+                Text(text = "20240140037",
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White)
+            }
+            Column(modifier = modifier
+                .fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally) {
+
             }
         }
     }
