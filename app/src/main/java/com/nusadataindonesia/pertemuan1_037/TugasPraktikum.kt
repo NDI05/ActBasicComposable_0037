@@ -2,19 +2,28 @@ package com.nusadataindonesia.pertemuan1_037
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -26,7 +35,11 @@ fun loginPage(modifier: Modifier){
             painter = painterResource(id = R.drawable.bg),
             contentDescription = null,
             contentScale = ContentScale.FillBounds,
-            modifier = Modifier.matchParentSize()
+            modifier = Modifier.matchParentSize(),
+            colorFilter = ColorFilter.tint(
+                color = Color.Black.copy(alpha = 0.5f),
+                blendMode = BlendMode.SrcOver
+            )
         )
         Column(modifier = modifier
             .fillMaxSize()
@@ -39,37 +52,66 @@ fun loginPage(modifier: Modifier){
             ) {
                 Text(text = "LOGIN",
                     fontSize = 60.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Blue
+                    fontWeight = FontWeight.Black,
+                    color = Color.White
                 )
                 Text(text = "Silahkan Login Terlebih dahulu",
                     fontSize = 25.sp,
+                    fontWeight = FontWeight.Light,
+                    fontStyle = FontStyle.Italic,
                     color = Color.White)
-                Image(painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            }
+            Column(modifier = modifier
+                .fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally){
+                Image(painter = painterResource(id = R.drawable.umy),
                     contentDescription = null,
-                    contentScale = ContentScale.FillBounds)
+                    contentScale = ContentScale.Fit,
+                    modifier = modifier.size(250.dp)
+                )
             }
             Column(modifier = modifier
                 .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(text = "nama",
-                    fontSize = 40.sp,
+                    fontSize = 35.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Blue
+                    color = Color.White
                 )
                 Text(text = "Andhika Pratama",
                     fontSize = 25.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White)
+                    color = Color.White,
+                    fontStyle = FontStyle.Italic
+                )
                 Text(text = "20240140037",
                     fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White)
-            }
-            Column(modifier = modifier
-                .fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally) {
+                    fontWeight = FontWeight.Black,
+                    color = Color.White,
+                    fontStyle = FontStyle.Italic
+                )
+                Box(
+                    modifier = Modifier
+                        .size(250.dp)
+                        .clip(CircleShape)
+                        .background(Color.White)
+                        .border(
+                            width = 5.dp,
+                            color = Color.Gray,
+                            shape = CircleShape
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
 
+                    Image(
+                        painter = painterResource(id = R.drawable.umy),
+                        contentDescription = null,
+                        contentScale = ContentScale.FillHeight,
+                        modifier = Modifier
+                            .fillMaxHeight()
+                            .width(180.dp)
+                    )
+                }
             }
         }
     }
