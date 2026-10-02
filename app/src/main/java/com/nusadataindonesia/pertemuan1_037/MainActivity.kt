@@ -18,12 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Pertemuan1_037Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
-                        innerPadding ->
-                    TataletakBoxColumnRow(modifier = Modifier.padding(innerPadding))
-                }
-            }
+            loginPage(modifier = Modifier)
         }
     }
 }
